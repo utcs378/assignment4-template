@@ -1,7 +1,7 @@
 # Assignment 4: Deep Research Agent and Block Management
 
-**Released:** 11/05/2026  
-**Due:** 11/18/2026 11:59 PM CT
+**Released:** 11/10/2026  
+**Due:** 11/20/2026 11:59 PM CT
 
 CS 378: Systems for Generative AI, Fall 2026. Complete this assignment with your registered team of two.
 
