@@ -1,0 +1,42 @@
+[project]
+name = "agentkv"
+version = "0.1.0"
+description = "CS378 Assignment 4: deep research agents and agent-discovered KV-cache policies"
+requires-python = ">=3.11"
+dependencies = [
+    "tokenizers>=0.21,<0.24",
+    "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+# Part 1: the deep research agent (LangGraph; httpx for the course LLM proxy and web search).
+agent = [
+    "langgraph>=1.0,<1.3",
+    "httpx>=0.27",
+]
+# The notebooks students work in (plots and Jupyter).
+notebook = [
+    "matplotlib>=3.8",
+    "jupyterlab>=4.2",
+]
+dev = [
+    "pytest>=8",
+    "hypothesis>=6.100",
+    "nbclient>=0.10",
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agentkv*", "research_app*"]
+
+[tool.setuptools.package-data]
+agentkv = ["data/*.json", "data/vidur/*.json", "data/vidur/*.npz", "_vendor/vidur/LICENSE", "_vendor/vidur/UPSTREAM.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: takes more than a few seconds",
+]
